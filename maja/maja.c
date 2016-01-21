@@ -3,11 +3,6 @@ Solucion http://acm.tju.edu.cn/toj/showp1218.html
 Programador: cams93
 */
 
-/*
-Solucion http://acm.tju.edu.cn/toj/showp1218.html
-Programador: mpalomera
-*/
-
 #include <stdio.h>
 
 int get_majacolumn(int);
