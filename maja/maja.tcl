@@ -12,10 +12,30 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 eval spawn [lrange $argv 0 end]
  
 #Put your test case here 
+send "1\r"
+expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "2\r"
-expect "0,0" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "3\r"
+expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "4\r"
-expect "-1,0" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "5\r"
+expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "6\r"
+expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "7\r"
-expect "1,0" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-send "0\r"
+expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "8\r"
+expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "9\r"
+expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "10\r"
+expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "11\r"
+expect "\\-2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "19\r"
+expect "2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+
+#In this case to terminate we send 0
+send "0\r" 
