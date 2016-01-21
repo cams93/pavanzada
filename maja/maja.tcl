@@ -17,9 +17,9 @@ expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;pu
 send "2\r"
 expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "3\r"
-expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "4\r"
-expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "5\r"
 expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "6\r"
@@ -31,9 +31,9 @@ expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;pu
 send "9\r"
 expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "10\r"
-expect "\\-1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "11\r"
-expect "\\-2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "19\r"
 expect "2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 
