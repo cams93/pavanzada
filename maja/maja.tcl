@@ -15,27 +15,49 @@ eval spawn [lrange $argv 0 end]
 send "1\r"
 expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "2\r"
-expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "0,1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "3\r"
-expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "-1,1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "4\r"
 expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "5\r"
-expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "0,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "6\r"
-expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "1,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "7\r"
 expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "8\r"
-expect "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "1,1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "9\r"
-expect "0,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "0,2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "10\r"
-expect -- "1,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "-1,2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "11\r"
-expect -- "2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "-2,2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "12\r"
+expect -- "-2,1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "13\r"
+expect -- "-2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "14\r"
+expect -- "1,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "15\r"
+expect -- "0,-2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "16\r"
+expect -- "1,-2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "17\r"
+expect -- "2,-2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "18\r"
+expect -- "2,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "19\r"
 expect "2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "20\r"
+expect "2,1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "21\r"
+expect "1,2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "22\r"
+expect "0,3"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "23\r"
+expect -- "-1,3"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 
 #In this case to terminate we send 0
 send "0\r" 
