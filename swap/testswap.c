@@ -10,10 +10,12 @@ Programador: cams93
 
 int testint(void);
 int testintG(void);
+int testArray(void);
 
 int main(){
 	testint();
 	testintG();
+	testArray();
 	return 0;
 }
 
@@ -25,11 +27,26 @@ int testint(){
 	printf("a = %d, b = %d\n", a, b);
 	return 0;
 }
+
 int testintG(){
 	int a=4;
 	int b=5;
 	printf("a = %d, b = %d\n", a, b);
 	swapgeneric((void *)&a, (void *)&b, sizeof(int));
 	printf("a = %d, b = %d\n", a, b);
+	return 0;
+}
+
+int testArray(){
+	int a[]={2, 3, 4, 5};
+	int b[]={1, 1, 1, 1};
+	int i;
+	for(i=0; i<4; i++){
+		printf("a[%d] = %d, b[%d] = %d\n", i, a[i], i, b[i]);
+	}
+	swapgeneric((void *)a, (void *)b, 4*sizeof(int));
+	for(i=0; i<4; i++){
+		printf("a[%d] = %d, b[%d] = %d\n", i, a[i], i, b[i]);
+	}
 	return 0;
 }
