@@ -39,7 +39,7 @@ expect -- "-2,1"  {foreground green; puts "PASSED";reset} default {foreground re
 send "13\r"
 expect -- "-2,0"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "14\r"
-expect -- "1,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect -- "-1,-1"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "15\r"
 expect -- "0,-2"  {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "16\r"
