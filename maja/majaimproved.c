@@ -24,7 +24,7 @@ int main(){
 		//Read input
 		scanf("%d",&willnumber);
 		//Print result
-		if(resultados[willnumber-1][2]==1 && resultados[willnumber-1][3]==1){
+		if(willnumber<=100 && resultados[willnumber-1][2]==1 && resultados[willnumber-1][3]==1){
 			printf("%d,%d\n",resultados[willnumber-1][0],resultados[willnumber-1][1]);
 		}
 		else{
