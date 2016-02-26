@@ -6,6 +6,8 @@
 int testIntA(void);
 int testCharA(void);
 int testStringA(void);
+int cmpchar(void *, void *);
+int cmpstring(void *, void *);
 
 int main(){
 	testIntA();
@@ -20,6 +22,19 @@ int testIntA(void){
 		printf("encontrado\n");
 	else
 		printf("no encontrado\n");
+}
+
+int cmpchar(void *a, void *b){
+	char va = *(char *)a;
+	char vb = *(char *)b;
+	return va == vb;
+}
+
+int cmpstring(void *a, void *b){
+	char *va = (char *)a;
+	char *vb = *(char **)b;
+	int r = strcmp(va, vb);
+	return r == 0;
 }
 
 int testCharA(void){

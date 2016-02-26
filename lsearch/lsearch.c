@@ -25,15 +25,3 @@ void * lsearchgeneric(void *elem,  void *array, int elemSize, int size, int (*cm
 	return 0;
 }
 
-int cmpchar(void *a, void *b){
-	char va = *(char *)a;
-	char vb = *(char *)b;
-	return va == vb;
-}
-
-int cmpstring(void *a, void *b){
-	char *va = (char *)a;
-	char *vb = *(char **)b;
-	int r = strcmp(va, vb);
-	return r == 0;
-}
