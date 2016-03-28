@@ -9,3 +9,4 @@ lsearch/lsearch
 kata2/pangram
 kata2/*.txt
 kata.c
+readwriter/readwriter
