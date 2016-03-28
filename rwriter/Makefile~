@@ -1,0 +1,4 @@
+all:
+	gcc -o readwriter readwriter.c hashset.c vector.c
+test:
+	./readwriter 2 50 fileread.txt
